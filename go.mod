@@ -1,4 +1,4 @@
-module github.com/ahuangg/json_rules
+module github.com/ahuangg/json-rules
 
 go 1.23.3
 
