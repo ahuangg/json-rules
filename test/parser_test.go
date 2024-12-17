@@ -1,7 +1,6 @@
 package test
 
 import (
-	"fmt"
 	"path/filepath"
 	"testing"
 
@@ -16,7 +15,6 @@ func TestEqual(t *testing.T) {
         t.Errorf("%v", err)
     }
 
-	fmt.Println(p.GetRule())
 	testData := map[string]interface{}{
        "x" : 1,
     }
@@ -139,7 +137,7 @@ func TestEqualAndGT(t *testing.T) {
 	}
 
 	result := p.Evaluate(testData)
-	assert.False(t, result, p.GetRule())
+	assert.False(t, result)
 }
 
 
