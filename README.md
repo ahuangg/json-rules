@@ -1,8 +1,8 @@
 # JSON Rules
 
-The JSON Rules serves as an abstraction layer over the [Golang Rules Engine](https://github.com/nikunjy/rules/blob/master/README.md).
+JSON Rules is an abstraction layer over the [Golang Rules Engine](https://github.com/nikunjy/rules/blob/master/README.md).
 
-This packages allows you to represent rules in JSON format instead of using the original ANTLR query syntax from the nikunjy/rules implementation.
+This package allows you to represent rules in JSON format instead of using the original ANTLR query syntax from the nikunjy/rules implementation.
 
 ## Example Queries
 
@@ -35,9 +35,9 @@ The following operations are supported, matching those available in the [Golang 
 
 ## JSON Rule Example
 
-To create JSON rules, follow these steps:
+To create a JSON rule, follow these steps:
 
-1. The `and` and `or`operation accepts a list of conditions. The and operation evaluates to true only if all conditions in the list are true, while the or operation evaluates to true if at least one condition is true. They are formatted as follows:
+1. The `and` and `or` operation accepts a list of conditions. The and operation evaluates to true only if all conditions in the list are true, while the or operation evaluates to true if at least one condition is true. They are formatted as follows:
 
 ```json
 {
@@ -67,7 +67,7 @@ To create JSON rules, follow these steps:
 ```
 
 ## How to use
-This example demonstrates how to initialize the parser with a JSON rule and evaluate it against a set of data. Adjust the paths and data as necessary for your specific use case.
+This example demonstrates how to initialize the parser with a JSON rule and evaluate it against a data set. You can adjust the paths and data as necessary for your specific use case.
 
 ```Go
     p := parser.NewParser(filepath.Join("examples", "example.json"))
