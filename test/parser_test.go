@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/ahuangg/json_rules/parser"
+	"github.com/ahuangg/json-rules/parser"
 	"github.com/stretchr/testify/assert"
 )
 func TestEqual(t *testing.T) {
