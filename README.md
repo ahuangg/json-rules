@@ -4,10 +4,6 @@ JSON Rules is an abstraction layer over the [Golang Rules Engine](https://github
 
 This package allows you to represent rules in JSON format instead of using the original ANTLR query syntax from the nikunjy/rules implementation.
 
-## Example Queries
-
-You can find example queries in the [examples/](test/examples/) directory.
-
 ## Operations
 
 The following operations are supported, matching those available in the [Golang Rules Engine](https://github.com/nikunjy/rules):
@@ -33,7 +29,7 @@ The following operations are supported, matching those available in the [Golang 
 | pr         | present, will be true if you have a key as true |
 | not        | not of a logical expression                     |
 
-## JSON Rule Example
+## JSON Rule Guide
 
 To create a JSON rule, follow these steps:
 
@@ -41,10 +37,7 @@ To create a JSON rule, follow these steps:
 
 ```json
 {
-    "and": [
-		{ "==": [{ "var": "y" }, 4] }, 
-		{ ">": [{ "var": "x" }, 1] }
-	]
+    "and": [{ "==": [{ "var": "y" }, 4] }, { ">": [{ "var": "x" }, 1] }]
 }
 ```
 
@@ -66,7 +59,12 @@ To create a JSON rule, follow these steps:
 }
 ```
 
+## Examples
+
+You can find more example json rules in the [examples/](test/examples/) directory.
+
 ## How to use
+
 This example demonstrates how to initialize the parser with a JSON rule and evaluate it against a data set. You can adjust the paths and data as necessary for your specific use case.
 
 ```Go

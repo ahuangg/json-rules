@@ -62,7 +62,3 @@ func (p *Parser) formatRule(node map[string]interface{}) string {
 func (p *Parser) Evaluate(items map[string]interface{}) bool {
 	return parser.Evaluate(p.rule, items)
 }
-
-func (p *Parser) GetRule() string {
-    return p.rule
-}
