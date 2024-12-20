@@ -2,7 +2,45 @@
 
 JSON Rules is an abstraction layer over the [Golang Rules Engine](https://github.com/nikunjy/rules/blob/master/README.md).
 
-This package allows you to represent rules in JSON format instead of using the original ANTLR query syntax from the nikunjy/rules implementation.
+This package allows you to:
+
+-   Define rules using JSON Logic syntax
+-   Evaluate complex logical conditions using JSON Logic
+-   Convert between JSON Rules and ANTLR query syntax
+
+## How to use
+
+### Evaluating from JSON Logic
+
+This example demonstrates how to initialize the parser with a JSON rule and evaluate it against a data set. You can adjust the paths and data as necessary for your specific use case.
+
+```Go
+    import "github.com/ahuangg/json-rules/parser"
+
+    p := parser.NewParser(filepath.Join("examples", "example.json"))
+	err := p.ParseRule()
+    if err != nil {
+        t.Errorf("%v", err)
+    }
+	testData := map[string]interface{}{
+       "x" : 1,
+    }
+	result := p.Evaluate(testData)
+```
+
+### Converting between rule formats
+
+This example demonstrates how you to convert between the two different rule formats
+
+```Go
+    import "github.com/ahuangg/json-rules/converter"
+
+    // convert JSON logic to expression
+    expression, err := converter.JSONToExpression(jsonLogic)
+
+    //convert expression to JSON logic
+    jsonLogic, err := converter.ExpressionToJSON(expression)
+```
 
 ## Operations
 
@@ -61,20 +99,4 @@ To create a JSON rule, follow these steps:
 
 ## Examples
 
-You can find more example json rules in the [examples/](test/examples/) directory.
-
-## How to use
-
-This example demonstrates how to initialize the parser with a JSON rule and evaluate it against a data set. You can adjust the paths and data as necessary for your specific use case.
-
-```Go
-    p := parser.NewParser(filepath.Join("examples", "example.json"))
-	err := p.ParseRule()
-    if err != nil {
-        t.Errorf("%v", err)
-    }
-	testData := map[string]interface{}{
-       "x" : 1,
-    }
-	result := p.Evaluate(testData)
-```
+You can find more example JSON rule format in the [examples/](test/examples/) directory.
